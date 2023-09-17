@@ -4,29 +4,20 @@ NextJs 13
 
 ## UI
 
+建立 UI 使用到工具
+
+### daisyUI
+
 [daisyUI](https://daisyui.com/)
 
-下載：npm i -D daisyui@latest
-
-tailwind.config.js 加入
-
-```config
-module.exports = {
-  //...
-  plugins: [require("daisyui")],
-}
-```
-
-## React Hook Form
+### React Hook Form
 
 [React Hook Form](https://react-hook-form.com/)
 
-下載：npm install react-hook-form
-
-## Lucide
-
-icon
+### Lucide
 
 [Lucide](https://lucide.dev/guide/packages/lucide-react)
 
-下載：npm install lucide-react
+## [Prisma](https://www.prisma.io/)
+
+啟動 prisma 方式：nex prisma studio
