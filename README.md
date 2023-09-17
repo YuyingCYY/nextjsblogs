@@ -21,3 +21,5 @@ NextJs 13
 ## [Prisma](https://www.prisma.io/)
 
 啟動 prisma 方式：nex prisma studio
+
+## [TanStack Query](https://tanstack.com/query/latest)

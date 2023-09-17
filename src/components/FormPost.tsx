@@ -1,6 +1,9 @@
 'use client';
 
 import { FormInputPost } from '@/types';
+import { Tag } from '@prisma/client';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -11,6 +14,15 @@ interface FormPostProps {
 
 const FormPost: FC<FormPostProps> = ({ submit, isEditing }) => {
   const { register, handleSubmit } = useForm<FormInputPost>();
+
+  // 獲取 Tag 列表
+  const { data: dataTags, isLoading: isLoadingTags } = useQuery<Tag[]>({
+    queryKey: ['tags'],
+    queryFn: async () => {
+      const res = await axios.get('/api/tags');
+      return res.data;
+    },
+  });
 
   return (
     <form
@@ -30,18 +42,24 @@ const FormPost: FC<FormPostProps> = ({ submit, isEditing }) => {
         placeholder='內容...'
       ></textarea>
 
-      <select
-        {...register('tag', { required: true })}
-        className='select select-bordered w-full max-w-lg'
-        defaultValue={''}
-      >
-        <option disabled value=''>
-          請選擇
-        </option>
-        <option>javascript</option>
-        <option>java</option>
-        <option>kotlin</option>
-      </select>
+      {isLoadingTags ? (
+        <span className='loading loading-ring loading-md'></span>
+      ) : (
+        <select
+          {...register('tag', { required: true })}
+          className='select select-bordered w-full max-w-lg'
+          defaultValue={''}
+        >
+          <option disabled value=''>
+            請選擇
+          </option>
+          {dataTags?.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.name}
+            </option>
+          ))}
+        </select>
+      )}
 
       <button type='submit' className='btn btn-primary w-full max-w-lg'>
         {isEditing ? '更新' : '新增'}
