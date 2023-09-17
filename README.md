@@ -29,4 +29,4 @@ icon
 
 [Lucide](https://lucide.dev/guide/packages/lucide-react)
 
-下載：
+下載：npm install lucide-react
