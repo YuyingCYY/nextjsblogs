@@ -1,10 +1,13 @@
-# P
+# NextJs Blogs
+
+NextJs 13
 
 ## UI
 
-daisyUI[https://daisyui.com/]
+[daisyUI](https://daisyui.com/)
 
 下載：npm i -D daisyui@latest
+
 tailwind.config.js 加入
 
 ```config
@@ -16,7 +19,7 @@ module.exports = {
 
 ## React Hook Form
 
-React Hook Form[https://react-hook-form.com/]
+[React Hook Form](https://react-hook-form.com/)
 
 下載：npm install react-hook-form
 
@@ -24,6 +27,6 @@ React Hook Form[https://react-hook-form.com/]
 
 icon
 
-Lucide[https://lucide.dev/guide/packages/lucide-react]
+[Lucide](https://lucide.dev/guide/packages/lucide-react)
 
 下載：
